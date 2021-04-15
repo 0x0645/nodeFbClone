@@ -1,0 +1,57 @@
+<%- include('shared/base.ejs') %> 
+<body id="login">
+
+    <div class="overlay">
+
+        <!-- ======================Registration form================================= -->
+        <div class="container pt-5">
+            <div class="row">
+
+                <div class="col-md-7 m-auto p-5">
+                    <div class="form p-5 ">
+                        <h2 class="text-center text-white">Registration</h2>
+                        <% if (exists.length!=0) { %>
+                            <span class="row alert alert-danger">email is used</span>
+                        <% } %>
+                        <form action="reqister" method="POST">
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <input value="<%=oldI.length==0?'':oldI[0].firstName%>" name="firstName" type="text" class="form-control inp pt-3" placeholder="First Name">
+                                </div>
+                                <div class="col">
+                                    <input value="<%=oldI.length==0?'':oldI[0].lastName%>" name="lastName" type="text" class="form-control inp pt-3" placeholder="Last Name">
+                                </div>
+                            </div>
+                            <input value="<%=oldI.length==0?'':oldI[0].username%>" name="username" type="text" class="form-control inp pt-3" placeholder="Username">
+                            <input value="<%=oldI.length==0?'':oldI[0].email%>" name="email" type="email" class="form-control inp pt-3" placeholder="Email">
+                            <input value="<%=oldI.length==0?'':oldI[0].password%>"name ="password" type="password" class="form-control inp pt-3 mb-3" placeholder="Password">
+                            <button type="submit " class="btn btn-outline-info text-white w-100">Sign Up</button>
+                            <p class="text-center pb-3"> <a href="index.html" class="text-white mt-3 d-block">Sign In Here</a>
+                            </p>
+                        </form>
+                        <% if (errors.find(e=>e.param=='firstName')) { %>
+                            <span class="row alert alert-danger">First name is invalid input</span>
+                        <% } %>
+                        <% if (errors.find(e=>e.param=='lastName')) { %>
+                            <span class="row alert alert-danger">Last name is invalid input</span>
+                        <% } %>
+                        <% if (errors.find(e=>e.param=='username')) { %>
+                            <span class="row alert alert-danger">Username is invalid input</span>
+                        <% } %>
+                        <% if (errors.find(e=>e.param=='email')) { %>
+                            <span class="row alert alert-danger">Email name is invalid input</span>
+                        <% } %>
+                        <% if (errors.find(e=>e.param=='password')) { %>
+                            <span class="row alert alert-danger">Password is not strong enough </span>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include('shared/footer.ejs') %> 
+
+
+
+
+

@@ -1,0 +1,46 @@
+<%- include('shared/base.ejs') %> 
+
+<body id="login">
+    <div class="overlay">
+        <!-- ================================spinner============================== -->
+        <div class="parent-spinner">
+            <div class="spinner">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
+        </div>
+ 
+
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-md-6 m-auto p-5">
+                    <div class="form p-5 ">
+                <h2 class="text-center text-white">Sign In</h2>
+                <% if (exists.length!=0) { %>
+                    <span class="row alert alert-danger">email doesn't exists</span>
+                <% } %>
+                <% if (wrong.length!=0) { %>
+                    <span class="row alert alert-danger">wrong password</span>
+                <% } %>
+                        <form action="signin" method="POST">
+                            <input name="email" placeholder="Email" type="email" class="form-control my-4 inp" type="text">
+                            <input name="password" placeholder="Password" type="password" class="form-control my-4 inp" >
+                            <button class="btn btn-outline-info w-100 text-white">Login</button>
+                            <p class="text-center text-white pt-3">
+                                Don't Have an account..?  <a href="registration.html" class="text-white" >Sign Up Here</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+<%- include('shared/footer.ejs') %> 
+
+
+
+
+
