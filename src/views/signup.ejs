@@ -26,7 +26,7 @@
                             <input value="<%=oldI.length==0?'':oldI[0].email%>" name="email" type="email" class="form-control inp pt-3" placeholder="Email">
                             <input value="<%=oldI.length==0?'':oldI[0].password%>"name ="password" type="password" class="form-control inp pt-3 mb-3" placeholder="Password">
                             <button type="submit " class="btn btn-outline-info text-white w-100">Sign Up</button>
-                            <p class="text-center pb-3"> <a href="index.html" class="text-white mt-3 d-block">Sign In Here</a>
+                            <p class="text-center pb-3"> <a href="/login" class="text-white mt-3 d-block">Sign In Here</a>
                             </p>
                         </form>
                         <% if (errors.find(e=>e.param=='firstName')) { %>

@@ -1,0 +1,37 @@
+<%- include('shared/base.ejs') %>
+
+
+<body id="home">
+    <%- include('shared/navbar.ejs') %>
+
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-md-8 m-auto card p-5">
+                <div class="">
+                    <h3>Account Setting</h3>
+                    <hr>
+                    <% if (errors.find(e=>e.param=='newpass')) { %>
+                        <span class="row alert alert-danger">new passwod is not good enough</span>
+                    <% } %>
+
+                    <% if (errors.find(e=>e.param=='repass')) { %>
+                        <span class="row alert alert-danger">re password not simmiler </span>
+                    <% } %>
+                    <% if (match.length!=0) { %>
+                        <span class="row alert alert-danger">old password is wrong </span>
+                    <% } %>
+                     
+                    <form action="/changepassword" method="POST">
+                        <input name="oldpass" placeholder="Enter Old Password" type="text" class="form-control my-2">
+                        <input name="newpass" placeholder="New Password" type="text" class="form-control my-2">
+                        <input name="repass" placeholder="Repeat Password" type="text" class="form-control my-2">
+                        <button class="btn btn-info mt-3">Save Setting</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<%- include('shared/footer.ejs') %>
